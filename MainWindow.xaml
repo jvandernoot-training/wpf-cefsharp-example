@@ -1,0 +1,49 @@
+﻿<Window x:Class="WpfCefSharpExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:local="clr-namespace:WpfCefSharpExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <Grid
+            Grid.Column="0" Grid.Row="1">
+            <StackPanel>
+                <Button
+                    Margin="0,0,0,10"
+                    Content="Add"
+                    Click="Button_Click"
+                    Height="30" Width="80"
+                    VerticalAlignment="Top" />
+            </StackPanel>
+
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <!-- Add a xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf" attribute to your parent control -->
+            <!-- Create a new instance in code or in `xaml` -->
+            <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1">
+                <TabControl x:Name="tabControl">
+                    <TabItem Header="Tab 0">
+                        <wpf:ChromiumWebBrowser x:Name="Browser" Address="http://localhost:80" 
+                                                IsBrowserInitializedChanged="Browser_IsBrowserInitializedChanged" 
+                                                JavascriptMessageReceived="Browser_JavascriptMessageReceived" 
+                                                LoadError="Browser_LoadError"/>
+                    </TabItem>
+                </TabControl>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
