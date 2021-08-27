@@ -37,7 +37,7 @@
             <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1">
                 <TabControl x:Name="tabControl">
                     <TabItem Header="Tab 0">
-                        <wpf:ChromiumWebBrowser x:Name="Browser" Address="http://localhost:80" 
+                        <wpf:ChromiumWebBrowser x:Name="Browser" 
                                                 IsBrowserInitializedChanged="Browser_IsBrowserInitializedChanged" 
                                                 JavascriptMessageReceived="Browser_JavascriptMessageReceived" 
                                                 LoadError="Browser_LoadError"/>

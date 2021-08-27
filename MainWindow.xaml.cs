@@ -31,6 +31,7 @@ namespace WpfCefSharpExample
             Cef.Initialize(settings);
 
             InitializeComponent();
+            Browser.Address = _defaultUrl;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
